@@ -2,11 +2,12 @@ package me.luucka.helplib.color;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 import java.util.List;
 
 /**
- * This class help you to convert MiniMessage string to {@link Component}
+ * MMColor class help you with Kyori adventury {@link Component}
  */
 public final class MMColor {
 
@@ -39,6 +40,15 @@ public final class MMColor {
      */
     public static List<Component> toComponent(final String... input) {
         return toComponent(List.of(input));
+    }
+
+    /**
+     * Generate a Legacy {@link String} from a {@link Component}
+     * @param input {@link Component} to convert
+     * @return {@link String} generated from a {@link Component}
+     */
+    public static String toLegacy(final Component input) {
+        return LegacyComponentSerializer.legacySection().serialize(input);
     }
 
 }
