@@ -6,7 +6,7 @@
 
     <groupId>me.luucka</groupId>
     <artifactId>HelpLib</artifactId>
-    <version>0.0.2-ALPHA</version>
+    <version>0.0.3-ALPHA</version>
     <packaging>jar</packaging>
 
     <name>HelpLib</name>
@@ -39,6 +39,16 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
                         </configuration>
                     </execution>
                 </executions>
